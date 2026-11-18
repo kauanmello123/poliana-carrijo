@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poliana Carrijo · Cirurgiã-Dentista</title>
+<meta name="description" content="Dra. Poliana Carrijo, cirurgiã-dentista. Atendimento acolhedor e humanizado para cuidar do seu sorriso. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600&display=swap" rel="stylesheet">
+<style>
+  /* Fontes do brand book (Greycliff CF e Uni Neue) são pagas: coloque os arquivos em fonts/ que elas entram; até lá, Outfit e Nunito Sans */
+  @font-face{font-family:"Greycliff CF";font-weight:700;font-display:swap;src:url(fonts/GreycliffCF-Bold.woff2) format("woff2"),url(fonts/GreycliffCF-Bold.otf) format("opentype")}
+  @font-face{font-family:"Greycliff CF";font-weight:400;font-display:swap;src:url(fonts/GreycliffCF-Regular.woff2) format("woff2"),url(fonts/GreycliffCF-Regular.otf) format("opentype")}
+  @font-face{font-family:"Uni Neue";font-weight:400;font-display:swap;src:url(fonts/UniNeue-Regular.woff2) format("woff2"),url(fonts/UniNeue-Regular.otf) format("opentype")}
+
+  /* Paleta do brand book */
+  :root{
+    --slate:#495867; --slate-2:#3c4956; --blush:#eed2cc; --terra:#ce796b; --rose:#cb7476; --cream:#fbf7f4;
+    --ink:#2f3a45; --muted:#6b7682; --line:#e9dfd9;
+    --head:"Greycliff CF",Outfit,sans-serif; --body:"Uni Neue","Nunito Sans",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font:400 17px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+  section{padding:100px 0}
+  h1,h2,h3{font-family:var(--head);color:var(--slate);line-height:1.15;font-weight:700}
+  h2{font-size:clamp(30px,4.2vw,46px);margin:10px 0 20px;letter-spacing:-.01em}
+  .eyebrow{font:600 13px var(--head);letter-spacing:.22em;text-transform:uppercase;color:var(--terra)}
+  .lead{color:var(--muted);max-width:600px}
+  .center{text-align:center}.center .lead{margin-inline:auto}
+  .accent{color:var(--terra)}
+
+  /* "sorriso" do logo: pontinhos + arco */
+  .smile{display:inline-flex;align-items:center;gap:6px;margin-bottom:14px}
+  .smile i{width:9px;height:9px;border-radius:50%;background:var(--blush)}
+  .smile i:nth-child(2){background:var(--terra)}
+  .smile b{width:44px;height:14px;border:4px solid var(--blush);border-top:0;border-radius:0 0 40px 40px;margin-left:4px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;font:600 15px var(--head);letter-spacing:.02em;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn svg{width:20px;height:20px}
+  .btn-main{background:var(--terra);color:#fff}
+  .btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(206,121,107,.35);background:#c46d5f}
+  .btn-ghost{border:1.5px solid var(--slate);color:var(--slate)}
+  .btn-ghost:hover{background:var(--slate);color:#fff}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:46px;width:auto}
+  .brand span{font:700 17px var(--head);letter-spacing:.08em;color:var(--slate);line-height:1.1}
+  .brand small{display:block;font:400 13px var(--head);letter-spacing:.02em;color:var(--rose);text-transform:none}
+  .nav ul{display:flex;gap:30px;list-style:none;font:500 15px var(--head);color:var(--slate)}
+  .nav ul a:hover{color:var(--terra)}
+  .nav .btn{padding:12px 22px}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:24px;height:2px;border-radius:2px;background:var(--slate);margin:5px 0}
+
+  /* Hero */
+  .hero{padding:64px 0 100px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.4vw,64px);margin:6px 0 22px;letter-spacing:-.02em}
+  .hero p{color:var(--muted);font-size:19px;max-width:520px;margin-bottom:36px}
+  .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-photo{position:relative;max-width:470px;margin-left:auto}
+  .hero-photo img{border-radius:240px 240px 32px 32px;aspect-ratio:4/5;object-fit:cover;object-position:center 10%;width:100%;position:relative;z-index:1}
+  .hero-photo::before{content:"";position:absolute;inset:28px -28px -28px 28px;border-radius:240px 240px 32px 32px;background:var(--blush)}
+  .hero-photo .badge{position:absolute;z-index:2;left:-36px;bottom:48px;background:#fff;border-radius:20px;padding:16px 22px;box-shadow:0 16px 40px rgba(73,88,103,.15);font:600 15px var(--head);color:var(--slate)}
+  .hero-photo .badge small{display:block;font:400 13px var(--body);color:var(--muted)}
+
+  /* Sobre */
+  .white{background:#fff}
+  .sobre{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+  .sobre-fotos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+  .sobre-fotos img{border-radius:28px;object-fit:cover;width:100%}
+  .sobre-fotos img:first-child{aspect-ratio:3/4.4}
+  .sobre-fotos img:last-child{aspect-ratio:3/4;margin-bottom:48px}
+  .sobre p{color:var(--muted);margin-bottom:16px}
+  .valores{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .valores div{background:var(--cream);border-radius:20px;padding:20px 18px}
+  .valores b{display:block;font:700 17px var(--head);color:var(--slate);margin-bottom:4px}
+  .valores span{font-size:14px;color:var(--muted);line-height:1.5;display:block}
+
+  /* Tratamentos */
+  .grid-t{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:48px}
+  .t{background:#fff;border-radius:24px;padding:30px 26px;border:1px solid var(--line);transition:transform .25s,box-shadow .25s,border-color .25s}
+  .t:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(73,88,103,.1);border-color:var(--blush)}
+  .t .ic{width:46px;height:46px;border-radius:50%;background:var(--blush);display:grid;place-items:center;margin-bottom:18px;color:var(--terra);font:700 16px var(--head)}
+  .t h3{font-size:20px;margin-bottom:8px}
+  .t p{font-size:15px;color:var(--muted);line-height:1.6}
+  .t .go{display:inline-block;margin-top:14px;font:600 14px var(--head);color:var(--terra)}
+  .t.star{background:linear-gradient(160deg,#fff 45%,#fbeae6);border-color:var(--blush)}
+  .t.star .ic{background:var(--terra);color:#fff}
+  .t.star h3::after{content:"Destaque";display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 10px;border-radius:99px;background:var(--blush);font:600 11px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+  .formacao{list-style:none;margin-top:26px;display:grid;gap:10px}
+  .formacao li{display:flex;gap:14px;align-items:flex-start;background:var(--cream);border-radius:16px;padding:14px 18px;font-size:15px;color:var(--muted);line-height:1.5}
+  .formacao b{display:block;font:600 16px var(--head);color:var(--slate)}
+  .formacao li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--terra);margin-top:7px}
+  .redes{display:flex;gap:12px;margin-top:6px}
+  .redes a{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--blush);display:grid;place-items:center;color:var(--slate);transition:background .2s,color .2s}
+  .redes a:hover{background:var(--terra);border-color:var(--terra);color:#fff}
+  .redes svg{width:18px;height:18px}
+  footer .redes{justify-content:center;margin:0 0 14px}
+
+  /* Atendimento (faixa escura) */
+  .dark{background:var(--slate);color:#e7ecf0}
+  .dark h2{color:#fff}
+  .dark .lead{color:#c3ccd4}
+  .dark .eyebrow{color:var(--blush)}
+  .atend{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .passos{list-style:none;margin-top:30px;counter-reset:p}
+  .passos li{counter-increment:p;display:grid;grid-template-columns:48px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)}
+  .passos li::before{content:counter(p,decimal-leading-zero);font:700 20px var(--head);color:var(--blush)}
+  .passos b{display:block;font:600 18px var(--head);color:#fff}
+  .passos span{color:#c3ccd4;font-size:15px}
+  .mosaico{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:16px}
+  .mosaico img{border-radius:24px;object-fit:cover;width:100%;height:100%}
+  .mosaico img:first-child{grid-row:span 2;aspect-ratio:9/16}
+  .mosaico img:not(:first-child){aspect-ratio:1}
+
+  /* Casos */
+  .casos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .caso{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+  .caso .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .caso .cap{padding:16px 20px;font:600 15px var(--head);color:var(--slate)}
+  .foto{position:relative;aspect-ratio:3/4;background:var(--cream) center/cover no-repeat}
+  .foto:not(.ok)::after{content:attr(data-label);position:absolute;inset:10px;display:grid;place-items:center;text-align:center;border:1.5px dashed var(--blush);border-radius:14px;font:600 12px var(--head);letter-spacing:.15em;text-transform:uppercase;color:var(--terra)}
+
+  /* CTA */
+  .cta{background:var(--blush);text-align:center;padding:90px 0;position:relative;overflow:hidden}
+  .cta h2{max-width:720px;margin-inline:auto}
+  .cta p{color:var(--slate);margin:0 auto 34px;max-width:540px}
+
+  /* Contato */
+  .contato{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .info{list-style:none;margin:8px 0 32px}
+  .info li{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .info .dot{flex:none;width:40px;height:40px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--terra)}
+  .info .dot svg{width:20px;height:20px}
+  .info small{display:block;font:600 12px var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+  .mapa{width:100%;min-height:380px;border:0;border-radius:28px}
+
+  footer{background:#fff;border-top:1px solid var(--line);padding:48px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer img{width:170px;margin:0 auto 16px}
+
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .2s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px;color:#fff}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:900px){
+    section{padding:72px 0}
+    .nav ul,.nav .btn{display:none}
+    .menu-btn{display:block}
+    .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:80px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 16px}
+    .nav.open ul a{display:block;padding:14px 0}
+    .hero-grid,.sobre,.atend,.contato{grid-template-columns:1fr;gap:44px}
+    .hero-photo{margin:0 auto;max-width:360px;width:calc(100% - 28px)}
+    .hero-photo .badge{left:-8px}
+    .valores{grid-template-columns:1fr}
+    .casos{grid-template-columns:1fr}
+    .brand span{font-size:15px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" id="nav">
+    <a href="#inicio" class="brand" aria-label="Poliana Carrijo — início">
+      <img src="img/simbolo.png" alt="">
+      <span>POLIANA CARRIJO<small>cirurgiã-dentista</small></span>
+    </a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#atendimento">Atendimento</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-main wa" href="#contato">Agendar consulta</a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="smile" aria-hidden="true"><i></i><i></i><b></b></div>
+        <span class="eyebrow">Cirurgiã-dentista · Mineiros - GO</span>
+        <h1>Liberdade para <span class="accent">sorrir</span>, comer e viver com confiança</h1>
+        <p>Implantes, limpeza e clareamento com atenção, paciência e respeito à sua história. Aqui você é ouvida(o), entende cada etapa e se sente acolhida(o).</p>
+        <div class="actions">
+          <a class="btn btn-main wa" href="#contato"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Agendar avaliação</a>
+          <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+        </div>
+      </div>
+      <div class="hero-photo reveal">
+        <img src="img/sobre.webp" alt="Dra. Poliana Carrijo" fetchpriority="high">
+        <div class="badge">Dra. Poliana Carrijo<small id="cro">CRO 00000</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white" id="sobre">
+    <div class="wrap sobre">
+      <div class="sobre-fotos reveal">
+        <img src="img/hero.webp" alt="Dra. Poliana Carrijo sorrindo no consultório" loading="lazy">
+        <img src="img/perfil.webp" alt="Dra. Poliana Carrijo sorrindo" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Muito prazer</span>
+        <h2>Sou a <span class="accent">Poliana</span></h2>
+        <p>Escolhi a Odontologia por unir meu desejo de cuidar de pessoas à minha paixão pela saúde, e essa escolha virou uma paixão maior do que eu imaginava.</p>
+        <p>Sou encantada pela possibilidade de devolver às pessoas a liberdade de sorrir, comer, conversar e viver com mais conforto e confiança. Tenho um carinho especial pela <strong>Cirurgia</strong> e pela <strong>Implantodontia</strong>, que recuperam não só a estética, mas a função e a qualidade de vida.</p>
+        <p>Acredito numa Odontologia feita com atenção, paciência e respeito à individualidade de cada pessoa. Gosto de ouvir, explicar e construir uma relação de confiança, para que você se sinta confortável, segura(o) e acolhida(o).</p>
+        <ul class="formacao">
+          <li><div><b>Especialização em Implantodontia</b></div></li>
+          <li><div><b>Graduação em Odontologia</b>Faculdade Morgana Potrich (FAMP), Mineiros - GO</div></li>
+          <li><div><b>Cursos complementares</b>Atendimento e manejo de pacientes com necessidades especiais · Toxina botulínica e preenchedores</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tratamentos">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Tratamentos</span>
+        <h2>Como posso <span class="accent">te ajudar</span></h2>
+        <p class="lead">Do check-up de rotina à estética do sorriso, um cuidado completo e personalizado.</p>
+      </div>
+      <div class="grid-t reveal" id="grid-t"></div>
+    </div>
+  </section>
+
+  <section class="dark" id="atendimento">
+    <div class="wrap atend">
+      <div class="reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Um atendimento pensado para você</h2>
+        <p class="lead">Cada sorriso é único, por isso cada plano de tratamento também é.</p>
+        <ol class="passos">
+          <li><div><b>Avaliação completa</b><span>Conversa, exame clínico e entendimento do que você deseja.</span></div></li>
+          <li><div><b>Planejamento individual</b><span>Você recebe as opções de tratamento explicadas com calma.</span></div></li>
+          <li><div><b>Tratamento com conforto</b><span>Procedimentos cuidadosos, com técnicas e materiais de qualidade.</span></div></li>
+          <li><div><b>Acompanhamento</b><span>Retornos e orientações para manter o resultado por muito tempo.</span></div></li>
+        </ol>
+      </div>
+      <div class="mosaico reveal">
+        <img src="img/atendimento1.webp" alt="Dra. Poliana realizando clareamento dental" loading="lazy">
+        <img src="img/atendimento2.webp" alt="Dra. Poliana atendendo uma paciente" loading="lazy">
+        <img src="img/planejamento.webp" alt="Dra. Poliana planejando um tratamento" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="white" id="casos">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Resultados</span>
+        <h2>Antes <span class="accent">&amp;</span> depois</h2>
+      </div>
+      <div class="casos reveal">
+        <div class="caso"><div class="pair"><div class="foto" data-foto="caso1-antes.jpg" data-label="Antes"></div><div class="foto" data-foto="caso1-depois.jpg" data-label="Depois"></div></div><div class="cap">Caso 01</div></div>
+        <div class="caso"><div class="pair"><div class="foto" data-foto="caso2-antes.jpg" data-label="Antes"></div><div class="foto" data-foto="caso2-depois.jpg" data-label="Depois"></div></div><div class="cap">Caso 02</div></div>
+        <div class="caso"><div class="pair"><div class="foto" data-foto="caso3-antes.jpg" data-label="Antes"></div><div class="foto" data-foto="caso3-depois.jpg" data-label="Depois"></div></div><div class="cap">Caso 03</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap reveal">
+      <div class="smile" aria-hidden="true"><i></i><i></i><b></b></div>
+      <h2>Vamos cuidar do seu sorriso juntas(os)?</h2>
+      <p>Me chama no WhatsApp e encontramos o melhor horário para a sua avaliação.</p>
+      <a class="btn btn-main wa" href="#contato"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap contato">
+      <div class="reveal">
+        <span class="eyebrow">Contato</span>
+        <h2>Onde me <span class="accent">encontrar</span></h2>
+        <ul class="info">
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Endereço</small><span id="endereco">Endereço do consultório</span></div></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></span><div><small>WhatsApp</small><a class="wa" href="#contato" id="fone">(00) 00000-0000</a></div></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Horário</small><span id="horario">Segunda a sexta, com hora marcada</span></div></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-ig"/></svg></span><div><small>Redes sociais</small><div class="redes"><a href="https://www.instagram.com/dra.polianacarrijo" target="_blank" rel="noopener" aria-label="Instagram @dra.polianacarrijo"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-ig"/></svg></a><a href="https://www.facebook.com/poliana.carrijo.odonto" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-fb"/></svg></a></div></div></li>
+        </ul>
+        <a class="btn btn-main wa" href="#contato">Agendar pelo WhatsApp</a>
+      </div>
+      <iframe class="mapa reveal" id="mapa" title="Mapa do consultório" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="img/logo.png" alt="Poliana Carrijo — cirurgiã-dentista" loading="lazy">
+  <div class="redes"><a href="https://www.instagram.com/dra.polianacarrijo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-ig"/></svg></a><a href="https://www.facebook.com/poliana.carrijo.odonto" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-fb"/></svg></a></div>
+  <p>© <span id="ano"></span> Dra. Poliana Carrijo · <span id="cro2">CRO 00000</span></p>
+</footer>
+
+<a class="wa-float wa" href="#contato" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></symbol>
+</svg>
+
+<script>
+  // ===== Dados editáveis (preencher quando a cliente mandar) =====
+  const WHATSAPP = '5562999892242';
+  const FONE = '(62) 99989-2242';
+  const ENDERECO = 'Rua 15, nº 95, esq. c/ 2ª Avenida, Qd. N, Lt. 14 — Bairro Machado, Mineiros - GO, 75830-132';
+  const MAPA = 'Rua 15, 95, Machado, Mineiros - GO, 75830-132'; // busca do mapa (sem quadra/lote, que o Google não entende)
+  const HORARIO = 'Quarta e sexta, 8h às 21h · Sábado e domingo, 8h às 18h · Feriados: atendimento de urgência';
+  const CRO = 'CRO-GO 19009';
+  const MSG = 'Olá, Dra. Poliana! Vim pelo site e gostaria de agendar uma avaliação.';
+  const TRATAMENTOS = [ // [nome, descrição, destaque]
+    ['Implantes Dentários','Implantes unitários para repor dentes perdidos com função, firmeza e naturalidade.',1],
+    ['Limpeza e Raspagem','Remoção de tártaro e placa para uma boca saudável e um hálito fresco.',1],
+    ['Clareamento Dental','Dentes mais brancos com segurança e acompanhamento profissional.',1],
+    ['Protocolo','Prótese fixa sobre implantes para quem perdeu todos os dentes de uma arcada.'],
+    ['Restaurações','Devolvem forma e função ao dente com a cor natural do seu sorriso.'],
+    ['Cirurgias','Extrações, sisos e procedimentos cirúrgicos com cuidado e conforto.'],
+    ['Toxina Botulínica','Aplicação de botox para equilíbrio e suavidade da expressão facial.'],
+  ];
+  // ===============================================================
+
+  const $=s=>document.querySelector(s);
+  const wa = m => WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m||MSG)}` : '#contato';
+  $('#grid-t').innerHTML = TRATAMENTOS.map(([t,d,s],i)=>
+    `<a class="t wa${s?' star':''}" data-msg="Olá, Dra. Poliana! Gostaria de saber mais sobre ${t}."><span class="ic">${String(i+1).padStart(2,'0')}</span><h3>${t}</h3><p>${d}</p><span class="go">Quero saber mais →</span></a>`).join('');
+  document.querySelectorAll('.wa').forEach(a=>{a.href=wa(a.dataset.msg);if(WHATSAPP){a.target='_blank';a.rel='noopener'}});
+  if (FONE) $('#fone').textContent = FONE;
+  if (ENDERECO) $('#endereco').textContent = ENDERECO;
+  if (HORARIO) $('#horario').innerHTML = HORARIO.split(' · ').join('<br>');
+  if (CRO) $('#cro').textContent = $('#cro2').textContent = CRO;
+  $('#mapa').src = 'https://maps.google.com/maps?output=embed&q=' + encodeURIComponent(MAPA || ENDERECO || 'Brasil');
+
+  // Fotos de casos: coloque img/<data-foto> e ela aparece; senão fica o aviso
+  document.querySelectorAll('.foto').forEach(el=>{const src='img/'+el.dataset.foto,i=new Image();i.onload=()=>{el.style.backgroundImage=`url("${src}")`;el.classList.add('ok')};i.src=src});
+
+  const nav=$('#nav'), mb=nav.querySelector('.menu-btn');
+  mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('open'));
+  nav.querySelectorAll('ul a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded',false)});
+  $('#ano').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
